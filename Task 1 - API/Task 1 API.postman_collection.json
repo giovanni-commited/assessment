@@ -94,7 +94,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://dog.ceo/api/breed/golden/images/random",
+					"raw": "https://dog.ceo/api/breed/retriever/golden/images/random",
 					"protocol": "https",
 					"host": [
 						"dog",
@@ -103,6 +103,7 @@
 					"path": [
 						"api",
 						"breed",
+						"retriever",
 						"golden",
 						"images",
 						"random"
