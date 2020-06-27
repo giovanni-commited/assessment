@@ -1,5 +1,5 @@
 ### Clone Project ##
-    git clone git@github.com:giovanni-commited/assessment.git
+    git clone git@github.com:{username}/assessment.git
 
 ### Task 1 -API ###
 Used Postman to create collection and execute APIs.
