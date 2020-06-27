@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "8fec1a3a-6b5a-46aa-a9a7-b983f4cfb107",
+		"name": "Task 1 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Diagram 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				},
+				"description": "Perform an API request to produce a list of all dog breeds."
+			},
+			"response": []
+		},
+		{
+			"name": "Diagram 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1edda3c5-1e23-49d8-8265-8f85094f99e1",
+						"exec": [
+							"pm.test(\"Verify - retriever is within list\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"retriever\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				},
+				"description": "Using code, verify \"retriever\" breed is within the list."
+			},
+			"response": []
+		},
+		{
+			"name": "Diagram 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breed/retriever/list",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"retriever",
+						"list"
+					]
+				},
+				"description": "Perform an API request to produce a list ofsub-breeds for a \"retriever\"."
+			},
+			"response": []
+		},
+		{
+			"name": "Diagram 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breed/golden/images/random",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breed",
+						"golden",
+						"images",
+						"random"
+					]
+				},
+				"description": "Perform an API request to produce a random image/link for the sub-breed \"golden\"."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
