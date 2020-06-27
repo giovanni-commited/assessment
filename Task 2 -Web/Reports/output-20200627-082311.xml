@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200627 08:23:11.492" generator="Robot 3.2.1 (Python 2.7.15 on win32)">
+<suite source="C:\Users\Crimson\Downloads\New folder\assessment\Task 2 -Web\Tests\AddUser.robot" id="s1" name="AddUser">
+<kw type="setup" name="Set Up" library="Common">
+<doc>Set up before tests run.</doc>
+<kw name="Get ${BROWSER} Driver" library="Helpers">
+<doc>Get specified driver.</doc>
+<assign>
+<var>${DriverPath}</var>
+</assign>
+<kw name="Return From Keyword If" library="BuiltIn">
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<arguments>
+<arg>'${driver}' == 'Chrome'</arg>
+<arg>./Drivers/chromedriver.exe</arg>
+</arguments>
+<msg timestamp="20200627 08:23:11.858" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20200627 08:23:11.858" starttime="20200627 08:23:11.858"></status>
+</kw>
+<msg timestamp="20200627 08:23:11.858" level="INFO">${DriverPath} = ./Drivers/chromedriver.exe</msg>
+<status status="PASS" endtime="20200627 08:23:11.858" starttime="20200627 08:23:11.857"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${DriverPath}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:11.859" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20200627 08:23:14.927" starttime="20200627 08:23:11.859"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:14.927" starttime="20200627 08:23:11.857"></status>
+</kw>
+<test id="s1-t1" name="TC1">
+<kw name="Add Users to User List Table">
+<tags>
+<tag>AddUser</tag>
+<tag>Success</tag>
+<tag>UserListTable</tag>
+</tags>
+<arguments>
+<arg>@{Case1}</arg>
+</arguments>
+<kw name="Navigate to ${URL}" library="Common">
+<doc>Navigation to website.</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${site}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:14.929" level="INFO">Opening url 'http://www.way2automation.com/angularjs-protractor/webtables/'</msg>
+<status status="PASS" endtime="20200627 08:23:16.626" starttime="20200627 08:23:14.929"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:16.627" starttime="20200627 08:23:14.928"></status>
+</kw>
+<kw name="Click ${btnAdd} button" library="Common">
+<doc>Click specified control.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${control}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:16.627" level="INFO">Clicking button 'xpath=//button[@type="add"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:16.934" starttime="20200627 08:23:16.627"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:16.935" starttime="20200627 08:23:16.627"></status>
+</kw>
+<kw name="Generate username" library="Helpers">
+<doc>Generate random username.</doc>
+<assign>
+<var>${Username}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>15</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${randomString}</var>
+</assign>
+<msg timestamp="20200627 08:23:16.937" level="INFO">${randomString} = 930960140389105</msg>
+<status status="PASS" endtime="20200627 08:23:16.937" starttime="20200627 08:23:16.936"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>User${randomString}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:16.937" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20200627 08:23:16.937" starttime="20200627 08:23:16.937"></status>
+</kw>
+<msg timestamp="20200627 08:23:16.938" level="INFO">${Username} = User930960140389105</msg>
+<status status="PASS" endtime="20200627 08:23:16.938" starttime="20200627 08:23:16.935"></status>
+</kw>
+<kw name="Create User">
+<doc>Process for creating user by entering user details and saving user to table.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${lastname}</arg>
+<arg>${password}</arg>
+<arg>${company}</arg>
+<arg>${role}</arg>
+<arg>${email}</arg>
+<arg>${cell}</arg>
+<arg>${Username}</arg>
+</arguments>
+<kw name="Input ${name} into ${txtFirstName}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:16.940" level="INFO">Typing text 'FName1' into text field 'xpath=//input[@name="FirstName"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.051" starttime="20200627 08:23:16.939"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.051" starttime="20200627 08:23:16.939"></status>
+</kw>
+<kw name="Input ${lastname} into ${txtLastName}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.052" level="INFO">Typing text 'LName1' into text field 'xpath=//input[@name="LastName"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.154" starttime="20200627 08:23:17.052"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.155" starttime="20200627 08:23:17.052"></status>
+</kw>
+<kw name="Input ${Username} into ${txtUserName}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.156" level="INFO">Typing text 'User930960140389105' into text field 'xpath=//input[@name="UserName"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.339" starttime="20200627 08:23:17.156"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.339" starttime="20200627 08:23:17.155"></status>
+</kw>
+<kw name="Input ${password} into ${txtPassword}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.340" level="INFO">Typing text 'Pass1' into text field 'xpath=//input[@name="Password"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.411" starttime="20200627 08:23:17.340"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.411" starttime="20200627 08:23:17.340"></status>
+</kw>
+<kw name="Get '${company}' from C:\\Users\\Crimson\\Downloads\\New folder\\assessment\\Task 2 -Web\\Tests/../DataFiles/Companies.json json file" library="Helpers">
+<doc>Get value from json file.</doc>
+<assign>
+<var>${companyId}</var>
+</assign>
+<kw name="Load JSON From File" library="JSONLibrary">
+<doc>Load JSON from file.</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${json}</var>
+</assign>
+<msg timestamp="20200627 08:23:17.413" level="INFO">${json} = {u'Company BBB': 16, u'Company AAA': 15}</msg>
+<status status="PASS" endtime="20200627 08:23:17.413" starttime="20200627 08:23:17.412"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json}</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${jsonValue}</var>
+</assign>
+<msg timestamp="20200627 08:23:17.442" level="INFO">${jsonValue} = [15]</msg>
+<status status="PASS" endtime="20200627 08:23:17.442" starttime="20200627 08:23:17.413"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${jsonValue}[0]</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.443" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20200627 08:23:17.443" starttime="20200627 08:23:17.442"></status>
+</kw>
+<msg timestamp="20200627 08:23:17.443" level="INFO">${companyId} = 15</msg>
+<status status="PASS" endtime="20200627 08:23:17.443" starttime="20200627 08:23:17.412"></status>
+</kw>
+<kw name="Select ${companyId} from ${cbCompany} radio button group" library="Common">
+<doc>Select a radio button from the specified group.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@name="${group}" and @value=${value}]</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.444" level="INFO">Clicking element 'xpath=//input[@name="optionsRadios" and @value=15]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.489" starttime="20200627 08:23:17.444"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.489" starttime="20200627 08:23:17.444"></status>
+</kw>
+<kw name="Select ${role} from ${cmbRole} dropdown" library="Common">
+<doc>Select a value from the dropdown.</doc>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.490" level="INFO">Selecting options from selection list 'xpath=//select[@name="RoleId"]' by label Admin.</msg>
+<status status="PASS" endtime="20200627 08:23:17.540" starttime="20200627 08:23:17.490"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.540" starttime="20200627 08:23:17.489"></status>
+</kw>
+<kw name="Input ${email} into ${txtEmail}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.541" level="INFO">Typing text 'admin@mail.com' into text field 'xpath=//input[@name="Email"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.639" starttime="20200627 08:23:17.541"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.639" starttime="20200627 08:23:17.540"></status>
+</kw>
+<kw name="Input ${cell} into ${txtCellphone}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.640" level="INFO">Typing text '082555' into text field 'xpath=//input[@name="Mobilephone"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.712" starttime="20200627 08:23:17.640"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.712" starttime="20200627 08:23:17.639"></status>
+</kw>
+<kw name="Click ${btnSave} button" library="Common">
+<doc>Click specified control.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${control}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.713" level="INFO">Clicking button 'xpath=//button[@ng-click="save(user)"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.773" starttime="20200627 08:23:17.713"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.773" starttime="20200627 08:23:17.712"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.773" starttime="20200627 08:23:16.938"></status>
+</kw>
+<kw name="Input ${Username} into ${txtSearch}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.775" level="INFO">Typing text 'User930960140389105' into text field 'xpath=//input[@ng-model="searchValue"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.888" starttime="20200627 08:23:17.774"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.889" starttime="20200627 08:23:17.774"></status>
+</kw>
+<kw name="Validate that ${columnUsername} contains ${Username}" library="Common">
+<doc>Validate that the text entered in the element is what is expected.</doc>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.889" level="INFO">Verifying element 'xpath=//tr[@ng-repeat="dataRow in displayedCollection"]/td[3]' contains exact text 'User930960140389105'.</msg>
+<status status="PASS" endtime="20200627 08:23:17.906" starttime="20200627 08:23:17.889"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.907" starttime="20200627 08:23:17.889"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.907" starttime="20200627 08:23:14.928"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.907" critical="yes" starttime="20200627 08:23:14.927"></status>
+</test>
+<test id="s1-t2" name="TC2">
+<kw name="Add Users to User List Table">
+<tags>
+<tag>AddUser</tag>
+<tag>Success</tag>
+<tag>UserListTable</tag>
+</tags>
+<arguments>
+<arg>@{Case2}</arg>
+</arguments>
+<kw name="Navigate to ${URL}" library="Common">
+<doc>Navigation to website.</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${site}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.910" level="INFO">Opening url 'http://www.way2automation.com/angularjs-protractor/webtables/'</msg>
+<status status="PASS" endtime="20200627 08:23:17.976" starttime="20200627 08:23:17.910"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:17.976" starttime="20200627 08:23:17.909"></status>
+</kw>
+<kw name="Click ${btnAdd} button" library="Common">
+<doc>Click specified control.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${control}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:17.977" level="INFO">Clicking button 'xpath=//button[@type="add"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.090" starttime="20200627 08:23:17.977"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.090" starttime="20200627 08:23:17.976"></status>
+</kw>
+<kw name="Generate username" library="Helpers">
+<doc>Generate random username.</doc>
+<assign>
+<var>${Username}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>15</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${randomString}</var>
+</assign>
+<msg timestamp="20200627 08:23:18.091" level="INFO">${randomString} = 410371778182814</msg>
+<status status="PASS" endtime="20200627 08:23:18.091" starttime="20200627 08:23:18.091"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>User${randomString}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.092" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20200627 08:23:18.092" starttime="20200627 08:23:18.092"></status>
+</kw>
+<msg timestamp="20200627 08:23:18.092" level="INFO">${Username} = User410371778182814</msg>
+<status status="PASS" endtime="20200627 08:23:18.092" starttime="20200627 08:23:18.090"></status>
+</kw>
+<kw name="Create User">
+<doc>Process for creating user by entering user details and saving user to table.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${lastname}</arg>
+<arg>${password}</arg>
+<arg>${company}</arg>
+<arg>${role}</arg>
+<arg>${email}</arg>
+<arg>${cell}</arg>
+<arg>${Username}</arg>
+</arguments>
+<kw name="Input ${name} into ${txtFirstName}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.095" level="INFO">Typing text 'FName2' into text field 'xpath=//input[@name="FirstName"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.180" starttime="20200627 08:23:18.095"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.181" starttime="20200627 08:23:18.094"></status>
+</kw>
+<kw name="Input ${lastname} into ${txtLastName}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.181" level="INFO">Typing text 'LName2' into text field 'xpath=//input[@name="LastName"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.250" starttime="20200627 08:23:18.181"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.250" starttime="20200627 08:23:18.181"></status>
+</kw>
+<kw name="Input ${Username} into ${txtUserName}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.251" level="INFO">Typing text 'User410371778182814' into text field 'xpath=//input[@name="UserName"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.354" starttime="20200627 08:23:18.250"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.354" starttime="20200627 08:23:18.250"></status>
+</kw>
+<kw name="Input ${password} into ${txtPassword}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.355" level="INFO">Typing text 'Pass2' into text field 'xpath=//input[@name="Password"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.417" starttime="20200627 08:23:18.355"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.417" starttime="20200627 08:23:18.354"></status>
+</kw>
+<kw name="Get '${company}' from C:\\Users\\Crimson\\Downloads\\New folder\\assessment\\Task 2 -Web\\Tests/../DataFiles/Companies.json json file" library="Helpers">
+<doc>Get value from json file.</doc>
+<assign>
+<var>${companyId}</var>
+</assign>
+<kw name="Load JSON From File" library="JSONLibrary">
+<doc>Load JSON from file.</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${json}</var>
+</assign>
+<msg timestamp="20200627 08:23:18.419" level="INFO">${json} = {u'Company BBB': 16, u'Company AAA': 15}</msg>
+<status status="PASS" endtime="20200627 08:23:18.419" starttime="20200627 08:23:18.418"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json}</arg>
+<arg>${value}</arg>
+</arguments>
+<assign>
+<var>${jsonValue}</var>
+</assign>
+<msg timestamp="20200627 08:23:18.440" level="INFO">${jsonValue} = [16]</msg>
+<status status="PASS" endtime="20200627 08:23:18.440" starttime="20200627 08:23:18.419"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${jsonValue}[0]</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.440" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20200627 08:23:18.440" starttime="20200627 08:23:18.440"></status>
+</kw>
+<msg timestamp="20200627 08:23:18.441" level="INFO">${companyId} = 16</msg>
+<status status="PASS" endtime="20200627 08:23:18.441" starttime="20200627 08:23:18.417"></status>
+</kw>
+<kw name="Select ${companyId} from ${cbCompany} radio button group" library="Common">
+<doc>Select a radio button from the specified group.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//input[@name="${group}" and @value=${value}]</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.442" level="INFO">Clicking element 'xpath=//input[@name="optionsRadios" and @value=16]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.489" starttime="20200627 08:23:18.441"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.489" starttime="20200627 08:23:18.441"></status>
+</kw>
+<kw name="Select ${role} from ${cmbRole} dropdown" library="Common">
+<doc>Select a value from the dropdown.</doc>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.490" level="INFO">Selecting options from selection list 'xpath=//select[@name="RoleId"]' by label Customer.</msg>
+<status status="PASS" endtime="20200627 08:23:18.534" starttime="20200627 08:23:18.490"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.535" starttime="20200627 08:23:18.489"></status>
+</kw>
+<kw name="Input ${email} into ${txtEmail}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.536" level="INFO">Typing text 'cusomter@mail.com' into text field 'xpath=//input[@name="Email"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.627" starttime="20200627 08:23:18.535"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.627" starttime="20200627 08:23:18.535"></status>
+</kw>
+<kw name="Input ${cell} into ${txtCellphone}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.628" level="INFO">Typing text '083444' into text field 'xpath=//input[@name="Mobilephone"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.696" starttime="20200627 08:23:18.628"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.697" starttime="20200627 08:23:18.627"></status>
+</kw>
+<kw name="Click ${btnSave} button" library="Common">
+<doc>Click specified control.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${control}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.697" level="INFO">Clicking button 'xpath=//button[@ng-click="save(user)"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.747" starttime="20200627 08:23:18.697"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.747" starttime="20200627 08:23:18.697"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.747" starttime="20200627 08:23:18.093"></status>
+</kw>
+<kw name="Input ${Username} into ${txtSearch}" library="Common">
+<doc>Enter value into input field.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.748" level="INFO">Typing text 'User410371778182814' into text field 'xpath=//input[@ng-model="searchValue"]'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.844" starttime="20200627 08:23:18.747"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.844" starttime="20200627 08:23:18.747"></status>
+</kw>
+<kw name="Validate that ${columnUsername} contains ${Username}" library="Common">
+<doc>Validate that the text entered in the element is what is expected.</doc>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20200627 08:23:18.845" level="INFO">Verifying element 'xpath=//tr[@ng-repeat="dataRow in displayedCollection"]/td[3]' contains exact text 'User410371778182814'.</msg>
+<status status="PASS" endtime="20200627 08:23:18.858" starttime="20200627 08:23:18.845"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.858" starttime="20200627 08:23:18.844"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.858" starttime="20200627 08:23:17.909"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:18.859" critical="yes" starttime="20200627 08:23:17.908"></status>
+</test>
+<kw type="teardown" name="Clean Up" library="Common">
+<doc>Clean up for when tests are completed.</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200627 08:23:22.048" starttime="20200627 08:23:18.861"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:23:22.048" starttime="20200627 08:23:18.860"></status>
+</kw>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="PASS" endtime="20200627 08:23:22.048" starttime="20200627 08:23:11.494"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="AddUser" pass="2">AddUser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

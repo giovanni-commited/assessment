@@ -16,4 +16,4 @@ Get ${value} from ${filename} json file
     [Documentation]     Get value from json file.
     ${json}=      Load Json From File     ${filename}
     ${jsonValue}=       Get Value From Json     ${json}     ${value}
-    Return from keyword     ${jsonValue}
+    Return from keyword     ${jsonValue}[0]

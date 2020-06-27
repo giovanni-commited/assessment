@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200627 08:22:14.657" generator="Robot 3.2.1 (Python 2.7.15 on win32)">
+<suite source="C:\Users\Crimson\Downloads\New folder\assessment\Task 2 -Web\Tests\AddUser.robot" id="s1" name="AddUser">
+<kw type="setup" name="Set Up" library="Common">
+<doc>Set up before tests run.</doc>
+<kw name="Get ${BROWSER} Driver" library="Helpers">
+<doc>Get specified driver.</doc>
+<assign>
+<var>${DriverPath}</var>
+</assign>
+<kw name="Return From Keyword If" library="BuiltIn">
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<arguments>
+<arg>'${driver}' == 'Chrome'</arg>
+<arg>./Drivers/chromedriver.exe</arg>
+</arguments>
+<msg timestamp="20200627 08:22:15.029" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20200627 08:22:15.030" starttime="20200627 08:22:15.029"></status>
+</kw>
+<msg timestamp="20200627 08:22:15.030" level="INFO">${DriverPath} = ./Drivers/chromedriver.exe</msg>
+<status status="PASS" endtime="20200627 08:22:15.030" starttime="20200627 08:22:15.029"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${DriverPath}</arg>
+</arguments>
+<msg timestamp="20200627 08:22:15.030" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20200627 08:22:18.105" starttime="20200627 08:22:15.030"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:22:18.105" starttime="20200627 08:22:15.029"></status>
+</kw>
+<test id="s1-t1" name="TC1">
+<kw name="Add Users to User List Table">
+<tags>
+<tag>AddUser</tag>
+<tag>Success</tag>
+<tag>UserListTable</tag>
+</tags>
+<arguments>
+<arg>${Case1}</arg>
+</arguments>
+<msg timestamp="20200627 08:22:18.106" level="FAIL">Keyword 'Add Users to User List Table' expected 7 arguments, got 1.</msg>
+<status status="FAIL" endtime="20200627 08:22:18.106" starttime="20200627 08:22:18.106"></status>
+</kw>
+<status status="FAIL" endtime="20200627 08:22:18.107" critical="yes" starttime="20200627 08:22:18.105">Keyword 'Add Users to User List Table' expected 7 arguments, got 1.</status>
+</test>
+<test id="s1-t2" name="TC2">
+<kw name="Add Users to User List Table">
+<tags>
+<tag>AddUser</tag>
+<tag>Success</tag>
+<tag>UserListTable</tag>
+</tags>
+<arguments>
+<arg>${Case2}</arg>
+</arguments>
+<msg timestamp="20200627 08:22:18.108" level="FAIL">Keyword 'Add Users to User List Table' expected 7 arguments, got 1.</msg>
+<status status="FAIL" endtime="20200627 08:22:18.108" starttime="20200627 08:22:18.108"></status>
+</kw>
+<status status="FAIL" endtime="20200627 08:22:18.108" critical="yes" starttime="20200627 08:22:18.108">Keyword 'Add Users to User List Table' expected 7 arguments, got 1.</status>
+</test>
+<kw type="teardown" name="Clean Up" library="Common">
+<doc>Clean up for when tests are completed.</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200627 08:22:20.182" starttime="20200627 08:22:18.110"></status>
+</kw>
+<status status="PASS" endtime="20200627 08:22:20.182" starttime="20200627 08:22:18.109"></status>
+</kw>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="FAIL" endtime="20200627 08:22:20.182" starttime="20200627 08:22:14.659"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="AddUser" pass="0">AddUser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
